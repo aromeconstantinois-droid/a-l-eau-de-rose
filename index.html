@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLÖM - Eau de Rose Pure Élégance</title>
     <style>
-       
         * {
             margin: 0;
             padding: 0;
@@ -50,19 +49,17 @@
             letter-spacing: 2px;
         }
 
- .logo-image {
-    width: 100%;          /* prend toute la largeur possible de son conteneur */
-    max-width: 200px;     /* limite la taille pour ne pas déformer le design */
-    height: auto;         /* garde les proportions */
-    background: white;
-    border-radius: 50%;
-    padding: 20px;        /* espace autour de l'image */
-    box-shadow: 0 4px 15px rgba(90, 74, 66, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+        .logo-image {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: 50%;
+            padding: 12px;
+            box-shadow: 0 4px 15px rgba(90, 74, 66, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .logo-image img {
             width: 100%;
@@ -239,6 +236,12 @@
             font-size: 5rem;
             position: relative;
             overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .product-image::before {
@@ -667,47 +670,54 @@
         </nav>
     </header>
 
-   <section class="section" id="produits">
-    <h2 class="section-title">Nos Produits</h2>
-    <div class="products">
-        <div class="product-card">
-            <div class="product-image">
-                <img src="images/eauderose.png" alt="Eau de Rose Pure">
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <h1>BLÖM - Eau de Rose</h1>
+            <p>L'essence pure de la tradition pour votre bien-être</p>
+            <a href="#produits" class="cta-button">Découvrir nos produits</a>
+        </div>
+    </section>
+
+    <section class="section" id="produits">
+        <h2 class="section-title">Nos Produits</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/aromeconstantinois-droid/a-l-eau-de-rose/main/eauderose.png" alt="Eau de Rose Pure">
+                </div>
+                <div class="product-info">
+                    <h3>Eau de Rose Pure</h3>
+                    <p>Distillation traditionnelle de roses fraîches de Constantine. 100% naturelle.</p>
+                    <div class="price">24,99 €</div>
+                    <button class="buy-button" onclick="addToCart('Eau de Rose Pure', '24,99 €')">Ajouter au panier</button>
+                </div>
             </div>
-            <div class="product-info">
-                <h3>Eau de Rose Pure</h3>
-                <p>Distillation traditionnelle de roses fraîches de Constantine. 100% naturelle.</p>
-                <div class="price">24,99 €</div>
-                <button class="buy-button" onclick="addToCart('Eau de Rose Pure', '24,99 €')">Ajouter au panier</button>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/aromeconstantinois-droid/a-l-eau-de-rose/main/eauderosepremium.png" alt="Eau de Rose Premium">
+                </div>
+                <div class="product-info">
+                    <h3>Eau de Rose Premium</h3>
+                    <p>Collection exclusive de roses de Damas. Édition limitée artisanale.</p>
+                    <div class="price">39,99 €</div>
+                    <button class="buy-button" onclick="addToCart('Eau de Rose Premium', '39,99 €')">Ajouter au panier</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/aromeconstantinois-droid/a-l-eau-de-rose/main/eauderosebienfaitspack.png" alt="Pack Découverte">
+                </div>
+                <div class="product-info">
+                    <h3>Pack Découverte</h3>
+                    <p>Trois flacons de 100ml pour découvrir nos différentes collections de roses.</p>
+                    <div class="price">59,99 €</div>
+                    <button class="buy-button" onclick="addToCart('Pack Découverte', '59,99 €')">Ajouter au panier</button>
+                </div>
             </div>
         </div>
-
-        <div class="product-card">
-            <div class="product-image">
-                <img src="images/eauderosepremium.png" alt="Eau de Rose Premium">
-            </div>
-            <div class="product-info">
-                <h3>Eau de Rose Premium</h3>
-                <p>Collection exclusive de roses de Damas. Édition limitée artisanale.</p>
-                <div class="price">39,99 €</div>
-                <button class="buy-button" onclick="addToCart('Eau de Rose Premium', '39,99 €')">Ajouter au panier</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image">
-                <img src="images/eauderosebienfaitspack.png" alt="Pack Découverte">
-            </div>
-            <div class="product-info">
-                <h3>Pack Découverte</h3>
-                <p>Trois flacons de 100ml pour découvrir nos différentes collections de roses.</p>
-                <div class="price">59,99 €</div>
-                <button class="buy-button" onclick="addToCart('Pack Découverte', '59,99 €')">Ajouter au panier</button>
-            </div>
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <section class="section tradition-section" id="tradition">
         <h2 class="section-title">Tradition de Distillation</h2>
@@ -729,7 +739,7 @@
         
         <div class="tradition-content">
             <div class="tradition-text">
-                <h3> Un Héritage Millénaire</h3>
+                <h3>🇩🇿 Un Héritage Millénaire</h3>
                 <p>La distillation de l'eau de rose, ou "Ma Zhar" en arabe, fait partie intégrante du patrimoine culturel depuis des siècles. À Constantine et dans plusieurs régions, cet art ancestral se manifeste à travers la célèbre fête traditionnelle de la distillation de l'eau de rose et de fleur d'oranger, perpétuant un savoir-faire transmis de génération en génération.</p>
                 
                 <h3>🌸 La Cueillette Traditionnelle</h3>
