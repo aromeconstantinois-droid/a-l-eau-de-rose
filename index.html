@@ -31,17 +31,14 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(90, 74, 66, 0.08);
             backdrop-filter: blur(10px);
-                 <header>
+                <header>
     <nav>
         <div class="logo">
             <div class="logo-image">
                 <img src="logoP.png" alt="BLÖM Logo">
             </div>
-            <span></span>
+            <!-- texte BLÖM retiré -->
         </div>
-            .logo span {
-    display: none;
-}
 
         <ul class="nav-links">
             <li><a href="#accueil">Accueil</a></li>
@@ -52,7 +49,19 @@
         </ul>
     </nav>
 </header>
-        }
+
+<style>
+    /* cacher le span si jamais il existe */
+    .logo span {
+        display: none;
+    }
+
+    /* agrandir le logo au maximum */
+    .logo-image img {
+        width: 150px; /* ou 200px selon besoin */
+        height: auto;
+    }
+</style>
 
         nav {
             display: flex;
