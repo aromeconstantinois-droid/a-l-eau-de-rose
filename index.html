@@ -492,17 +492,17 @@
         }
 
      .whatsapp-section {
-    background: linear-gradient(135deg, #d3d3d3 0%, #a9a9a9 100%); /* dégradé gris clair → gris foncé */
+    background-color: #e0e0e0; /* gris uniforme clair */
     padding: 3.5rem;
     border-radius: 25px;
     text-align: center;
     margin-top: 3.5rem;
-    color: #333; /* texte sombre pour contraste */
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* ombre plus douce */
+    color: #333; /* texte sombre */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .whatsapp-button {
-    background: #333; /* bouton sombre pour contraste */
+    background-color: #555; /* bouton gris foncé */
     color: #fff;
     padding: 1.3rem 3.5rem;
     border: 3px solid transparent;
@@ -516,6 +516,11 @@
     gap: 1rem;
     text-decoration: none;
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-4px);
+    background-color: #777; /* légèrement plus clair au hover */
 }
 
 .whatsapp-button:hover {
