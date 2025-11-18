@@ -241,7 +241,8 @@
         .product-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            padding: 1rem;
         }
 
         .product-image::before {
@@ -812,4 +813,119 @@
         <div class="whatsapp-section">
             <h3>💬 Discutez avec nous sur WhatsApp</h3>
             <p>Pour une réponse rapide, contactez-nous directement via WhatsApp !</p>
-            <a href="https://wa.me/213XXXXXXXXX?text=Bonjour%2C%20je%20suis%20intéressé%20par%20vos%20produits
+            <a href="https://wa.me/213XXXXXXXXX?text=Bonjour%2C%20je%20suis%20intéressé%20par%20vos%20produits%20d'eau%20de%20rose" 
+               class="whatsapp-button" 
+               target="_blank"
+               rel="noopener noreferrer">
+                <span class="whatsapp-icon">📱</span>
+                Contacter sur WhatsApp
+            </a>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem;">Disponible 7j/7 pour répondre à vos questions</p>
+        </div>
+
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" placeholder="Votre message" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BLÖM - Eau de Rose. Tous droits réservés.</p>
+        <p>L'essence authentique de la rose pour votre bien-être quotidien</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        function addToCart(productName, price) {
+            alert(`✅ "${productName}" (${price}) a été ajouté à votre panier !\n\nContactez-nous sur WhatsApp pour finaliser votre commande.`);
+            
+            const message = encodeURIComponent(`Bonjour, je souhaite commander : ${productName} (${price})`);
+            const whatsappUrl = `https://wa.me/213XXXXXXXXX?text=${message}`;
+            
+            if (confirm('Voulez-vous être redirigé vers WhatsApp pour finaliser votre commande ?')) {
+                window.open(whatsappUrl, '_blank');
+            }
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = encodeURIComponent(
+                `Nouveau message de contact:\n\nNom: ${name}\nEmail: ${email}\nMessage: ${message}`
+            );
+            
+            alert('✅ Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+            
+            if (confirm('Voulez-vous aussi nous envoyer ce message via WhatsApp ?')) {
+                window.open(`https://wa.me/213XXXXXXXXX?text=${whatsappMessage}`, '_blank');
+            }
+            
+            e.target.reset();
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card, .benefit-item, .tradition-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
