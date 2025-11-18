@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eau de Rose - Pure Élégance</title>
+    <title>BLÖM - Eau de Rose Pure Élégance</title>
     <style>
         * {
             margin: 0;
@@ -13,20 +13,22 @@
 
         body {
             font-family: 'Georgia', serif;
-            color: #2c3e50;
+            color: #5a4a42;
             line-height: 1.6;
             overflow-x: hidden;
+            background: #faf8f6;
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d4c0 100%);
+            color: #5a4a42;
+            padding: 1.2rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(90, 74, 66, 0.08);
+            backdrop-filter: blur(10px);
         }
 
         nav {
@@ -48,17 +50,18 @@
         }
 
         .logo-image {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             background: white;
             border-radius: 50%;
-            padding: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 8px;
+            box-shadow: 0 4px 15px rgba(90, 74, 66, 0.15);
         }
 
-        .logo-image svg {
+        .logo-image img {
             width: 100%;
             height: 100%;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -68,24 +71,41 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #5a4a42;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c9a582;
+            transition: width 0.3s;
         }
 
         .nav-links a:hover {
-            opacity: 0.7;
+            color: #c9a582;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .hero {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0" width="1200" height="600"/><path fill="%23e8e8e8" d="M0 300L50 325L100 300L150 350L200 325L250 375L300 350L350 325L400 350L450 300L500 325L550 350L600 325L650 300L700 350L750 325L800 350L850 325L900 300L950 325L1000 350L1050 325L1100 300L1150 325L1200 300V600H0Z"/></svg>');
+            background: linear-gradient(135deg, rgba(201, 165, 130, 0.9), rgba(139, 115, 95, 0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5e6d3" width="1200" height="600"/><path fill="%23e8d4c0" d="M0 300L50 325L100 300L150 350L200 325L250 375L300 350L350 325L400 350L450 300L500 325L550 350L600 325L650 300L700 350L750 325L800 350L850 325L900 300L950 325L1000 350L1050 325L1100 300L1150 325L1200 300V600H0Z"/></svg>');
             background-size: cover;
             background-position: center;
-            padding: 150px 2rem 100px;
+            padding: 180px 2rem 120px;
             text-align: center;
             color: white;
-            min-height: 600px;
+            min-height: 650px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -105,21 +125,26 @@
 
         .cta-button {
             background: white;
-            color: #667eea;
-            padding: 1rem 2.5rem;
-            border: none;
+            color: #8b735f;
+            padding: 1.2rem 3rem;
+            border: 2px solid transparent;
             border-radius: 50px;
             font-size: 1.1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
             animation: fadeInUp 1s ease 0.4s backwards;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+            background: #8b735f;
+            color: white;
+            border-color: white;
         }
 
         @keyframes fadeInUp {
@@ -141,9 +166,24 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #667eea;
+            font-size: 2.8rem;
+            margin-bottom: 3.5rem;
+            color: #8b735f;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a582, #8b735f);
+            border-radius: 2px;
         }
 
         .products {
@@ -154,25 +194,44 @@
 
         .product-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 30px rgba(90, 74, 66, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #f5e6d3;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(90, 74, 66, 0.2);
         }
 
         .product-image {
             width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            height: 280px;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d4c0 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201, 165, 130, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
 
         .product-info {
@@ -182,7 +241,7 @@
         .product-info h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            color: #2c3e50;
+            color: #5a4a42;
         }
 
         .product-info p {
@@ -191,44 +250,56 @@
         }
 
         .price {
-            font-size: 1.8rem;
-            color: #667eea;
+            font-size: 2rem;
+            color: #8b735f;
             font-weight: bold;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .buy-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #c9a582 0%, #8b735f 100%);
             color: white;
             border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
+            padding: 1rem 2rem;
+            border-radius: 30px;
             cursor: pointer;
             width: 100%;
-            font-size: 1rem;
-            transition: opacity 0.3s;
+            font-size: 1.05rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(139, 115, 95, 0.3);
         }
 
         .buy-button:hover {
-            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(139, 115, 95, 0.4);
+            background: linear-gradient(135deg, #8b735f 0%, #c9a582 100%);
         }
 
         .benefits {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #faf8f6 0%, #f5e6d3 100%);
         }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .benefit-item {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(90, 74, 66, 0.1);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-8px);
+            border-color: #c9a582;
+            box-shadow: 0 12px 35px rgba(90, 74, 66, 0.15);
         }
 
         .benefit-icon {
@@ -237,7 +308,7 @@
         }
 
         .tradition-section {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            background: linear-gradient(135deg, #fff9f5 0%, #ffeee5 100%);
         }
 
         .photo-gallery {
@@ -274,7 +345,7 @@
             text-align: center;
             padding: 2rem;
             font-size: 1.1rem;
-            color: #667eea;
+            color: #8b735f;
             font-weight: 500;
         }
 
@@ -286,10 +357,11 @@
         }
 
         .tradition-text h3 {
-            color: #667eea;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            color: #8b735f;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+            font-weight: 600;
         }
 
         .tradition-text h3:first-child {
@@ -310,15 +382,18 @@
 
         .tradition-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
+            padding: 2.5rem;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 8px 25px rgba(90, 74, 66, 0.1);
+            transition: all 0.3s;
+            border: 2px solid #f5e6d3;
         }
 
         .tradition-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            border-color: #c9a582;
+            box-shadow: 0 12px 35px rgba(90, 74, 66, 0.15);
         }
 
         .tradition-icon {
@@ -327,9 +402,10 @@
         }
 
         .tradition-card h4 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            color: #8b735f;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .tradition-card p {
@@ -338,10 +414,19 @@
         }
 
         footer {
-            background: #2c3e50;
-            color: white;
+            background: linear-gradient(135deg, #5a4a42 0%, #3d3430 100%);
+            color: #f5e6d3;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer p:first-child {
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
         .contact-form {
@@ -356,11 +441,20 @@
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
+            padding: 1.2rem;
+            border: 2px solid #e8d4c0;
+            border-radius: 15px;
             font-size: 1rem;
             font-family: inherit;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c9a582;
+            box-shadow: 0 0 0 3px rgba(201, 165, 130, 0.1);
         }
 
         .form-group textarea {
@@ -370,12 +464,12 @@
 
         .whatsapp-section {
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            padding: 3rem;
-            border-radius: 20px;
+            padding: 3.5rem;
+            border-radius: 25px;
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 3.5rem;
             color: white;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.35);
         }
 
         .whatsapp-section h3 {
@@ -392,22 +486,24 @@
         .whatsapp-button {
             background: white;
             color: #25D366;
-            padding: 1.2rem 3rem;
-            border: none;
+            padding: 1.3rem 3.5rem;
+            border: 3px solid transparent;
             border-radius: 50px;
             font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
             gap: 1rem;
             text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
         .whatsapp-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            background: #f0f0f0;
         }
 
         .whatsapp-icon {
@@ -447,29 +543,9 @@
         <nav>
             <div class="logo">
                 <div class="logo-image">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#c06c84;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <g transform="translate(100, 100)">
-                            <ellipse cx="0" cy="-35" rx="25" ry="35" fill="url(#roseGrad)" opacity="0.7" transform="rotate(0)"/>
-                            <ellipse cx="0" cy="-35" rx="25" ry="35" fill="url(#roseGrad)" opacity="0.7" transform="rotate(45)"/>
-                            <ellipse cx="0" cy="-35" rx="25" ry="35" fill="url(#roseGrad)" opacity="0.7" transform="rotate(90)"/>
-                            <ellipse cx="0" cy="-35" rx="25" ry="35" fill="url(#roseGrad)" opacity="0.7" transform="rotate(135)"/>
-                            <ellipse cx="0" cy="-35" rx="25" ry="35" fill="url(#roseGrad)" opacity="0.7" transform="rotate(180)"/>
-                            <ellipse cx="0" cy="-35" rx="25" ry="35" fill="url(#roseGrad)" opacity="0.7" transform="rotate(225)"/>
-                            <ellipse cx="0" cy="-35" rx="25" ry="35" fill="url(#roseGrad)" opacity="0.7" transform="rotate(270)"/>
-                            <ellipse cx="0" cy="-35" rx="25" ry="35" fill="url(#roseGrad)" opacity="0.7" transform="rotate(315)"/>
-                            <circle cx="0" cy="0" r="15" fill="#d4457c"/>
-                            <circle cx="0" cy="0" r="10" fill="#e56a8f"/>
-                            <circle cx="0" cy="0" r="5" fill="#f08aa5"/>
-                        </g>
-                    </svg>
+                    <img src="https://raw.githubusercontent.com/aromeconstantinois-droid/a-l-eau-de-rose/refs/heads/main/logo%20blom.jpg" alt="BLÖM Logo">
                 </div>
-                <span>Arôme Constantinois</span>
+                <span>BLÖM</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
@@ -483,7 +559,7 @@
 
     <section class="hero" id="accueil">
         <div class="hero-content">
-            <h1>Eau de Rose</h1>
+            <h1>BLÖM - Eau de Rose</h1>
             <p>L'essence pure de la tradition algérienne pour votre bien-être</p>
             <a href="#produits" class="cta-button">Découvrir nos produits</a>
         </div>
@@ -645,7 +721,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Arôme Constantinois. Tous droits réservés.</p>
+        <p>&copy; 2025 BLÖM - Eau de Rose. Tous droits réservés.</p>
         <p>L'essence authentique de la rose algérienne pour votre bien-être quotidien</p>
     </footer>
 
