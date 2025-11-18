@@ -491,53 +491,43 @@
             min-height: 120px;
         }
 
-        .whatsapp-section {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            padding: 3.5rem;
-            border-radius: 25px;
-            text-align: center;
-            margin-top: 3.5rem;
-            color: white;
-            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.35);
-        }
+     .whatsapp-section {
+    background: linear-gradient(135deg, #d3d3d3 0%, #a9a9a9 100%); /* dégradé gris clair → gris foncé */
+    padding: 3.5rem;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 3.5rem;
+    color: #333; /* texte sombre pour contraste */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* ombre plus douce */
+}
 
-        .whatsapp-section h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+.whatsapp-button {
+    background: #333; /* bouton sombre pour contraste */
+    color: #fff;
+    padding: 1.3rem 3.5rem;
+    border: 3px solid transparent;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
 
-        .whatsapp-section p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
+.whatsapp-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    background: #555; /* léger changement au hover */
+}
 
-        .whatsapp-button {
-            background: white;
-            color: #25D366;
-            padding: 1.3rem 3.5rem;
-            border: 3px solid transparent;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
+.whatsapp-icon {
+    font-size: 1.8rem;
+}
 
-        .whatsapp-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-            background: #f0f0f0;
-        }
-
-        .whatsapp-icon {
-            font-size: 1.8rem;
-        }
 
         @media (max-width: 768px) {
             .hero-content h1 {
