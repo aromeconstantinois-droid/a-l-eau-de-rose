@@ -688,31 +688,44 @@
             </div>
         </div>
 
-        <div class="product-card">
-            <div class="product-image">
-                <img src="images/eauderosepremium.png" alt="Eau de Rose Premium">
-            </div>
-            <div class="product-info">
-                <h3>Eau de Rose Premium</h3>
-                <p>Collection exclusive de roses de Damas. Édition limitée artisanale.</p>
-                <div class="price">39,99 €</div>
-                <button class="buy-button" onclick="addToCart('Eau de Rose Premium', '39,99 €')">Ajouter au panier</button>
-            </div>
-        </div>
+        .products {
+    display: flex;
+    gap: 20px;       /* espace entre les cartes */
+    flex-wrap: wrap;  /* passe à la ligne sur petits écrans */
+    justify-content: center;
+}
 
-        <div class="product-card">
-            <div class="product-image">
-                <img src="images/eauderosepack.png" alt="Pack Découverte">
-            </div>
-            <div class="product-info">
-                <h3>Pack Découverte</h3>
-                <p>Trois flacons de 100ml pour découvrir nos différentes collections de roses.</p>
-                <div class="price">59,99 €</div>
-                <button class="buy-button" onclick="addToCart('Pack Découverte', '59,99 €')">Ajouter au panier</button>
-            </div>
-        </div>
-    </div>
-</section>
+.product-card {
+    width: 250px;               /* largeur fixe pour uniformiser les cartes */
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;             /* hauteur fixe pour toutes les cartes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff;           /* utile pour PNG transparent */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;        /* garde les proportions sans couper l'image */
+}
+
 
 
     <section class="section tradition-section" id="tradition">
