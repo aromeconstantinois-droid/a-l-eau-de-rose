@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLÖM - Eau de Rose Pure Élégance</title>
     <style>
+        # ---- LOGO EN HAUT DE LA PAGE ----
+st.markdown("""
+    <div style='text-align:center; margin-bottom:20px;'>
+        <img src="logoP.png" width="180">
+    </div>
+""", unsafe_allow_html=True)
+
         * {
             margin: 0;
             padding: 0;
@@ -148,11 +155,22 @@
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .section { padding: 80px 2rem; max-width: 1200px; margin: 0 auto; }
+        .section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .section-title {
             text-align: center;
             font-size: 2.8rem;
@@ -162,6 +180,7 @@
             position: relative;
             padding-bottom: 1rem;
         }
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -174,7 +193,12 @@
             border-radius: 2px;
         }
 
-        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
         .product-card {
             background: white;
             border-radius: 20px;
@@ -183,8 +207,24 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #f5e6d3;
         }
-        .product-card:hover { transform: translateY(-15px); box-shadow: 0 20px 50px rgba(90, 74, 66, 0.2); }
-        .product-image { width: 100%; height: 280px; background: linear-gradient(135deg, #f5e6d3 0%, #e8d4c0 100%); display: flex; align-items: center; justify-content: center; font-size: 5rem; position: relative; overflow: hidden; }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(90, 74, 66, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d4c0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
         .product-image::before {
             content: '';
             position: absolute;
@@ -195,14 +235,34 @@
             background: radial-gradient(circle, rgba(201, 165, 130, 0.1) 0%, transparent 70%);
             animation: pulse 3s ease-in-out infinite;
         }
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 0.5; }
             50% { transform: scale(1.1); opacity: 0.8; }
         }
-        .product-info { padding: 1.5rem; }
-        .product-info h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #5a4a42; }
-        .product-info p { color: #7f8c8d; margin-bottom: 1rem; }
-        .price { font-size: 2rem; color: #8b735f; font-weight: bold; margin-bottom: 1.2rem; }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #5a4a42;
+        }
+
+        .product-info p {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #8b735f;
+            font-weight: bold;
+            margin-bottom: 1.2rem;
+        }
+
         .buy-button {
             background: linear-gradient(135deg, #c9a582 0%, #8b735f 100%);
             color: white;
@@ -216,45 +276,175 @@
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(139, 115, 95, 0.3);
         }
+
         .buy-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(139, 115, 95, 0.4);
             background: linear-gradient(135deg, #8b735f 0%, #c9a582 100%);
         }
 
-        /* Section Tradition et Galerie */
-        .tradition-section { background: linear-gradient(135deg, #fff9f5 0%, #ffeee5 100%); }
-        .photo-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-        .gallery-item { position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.15); background: white; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-        .gallery-item:hover img { transform: scale(1.05); }
-        .gallery-placeholder { text-align: center; padding: 2rem; font-size: 1.1rem; color: #8b735f; font-weight: 500; }
+        .benefits {
+            background: linear-gradient(135deg, #faf8f6 0%, #f5e6d3 100%);
+        }
 
-        .tradition-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-        .tradition-text h3 { color: #8b735f; margin-top: 2.5rem; margin-bottom: 1.2rem; font-size: 1.6rem; font-weight: 600; }
-        .tradition-text h3:first-child { margin-top: 0; }
-        .tradition-text p { color: #555; line-height: 1.8; text-align: justify; }
-        .tradition-images { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .tradition-card { background: white; padding: 2.5rem; border-radius: 20px; text-align: center; box-shadow: 0 8px 25px rgba(90, 74, 66, 0.1); transition: all 0.3s; border: 2px solid #f5e6d3; }
-        .tradition-card:hover { transform: translateY(-8px); border-color: #c9a582; box-shadow: 0 12px 35px rgba(90, 74, 66, 0.15); }
-        .tradition-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .tradition-card h4 { color: #8b735f; margin-bottom: 0.8rem; font-size: 1.2rem; font-weight: 600; }
-        .tradition-card p { color: #7f8c8d; font-size: 0.9rem; }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
 
-        /* Section Bienfaits */
-        .benefits { background: linear-gradient(135deg, #faf8f6 0%, #f5e6d3 100%); }
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; }
-        .benefit-item { text-align: center; padding: 2.5rem; background: white; border-radius: 20px; box-shadow: 0 8px 25px rgba(90, 74, 66, 0.1); transition: all 0.3s; border: 2px solid transparent; }
-        .benefit-item:hover { transform: translateY(-8px); border-color: #c9a582; box-shadow: 0 12px 35px rgba(90, 74, 66, 0.15); }
-        .benefit-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .benefit-item {
+            text-align: center;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(90, 74, 66, 0.1);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
 
-        /* Footer et Contact */
-        footer { background: linear-gradient(135deg, #5a4a42 0%, #3d3430 100%); color: #f5e6d3; text-align: center; padding: 3rem 2rem; }
-        footer p { margin: 0.5rem 0; }
-        footer p:first-child { font-weight: 600; font-size: 1.1rem; }
+        .benefit-item:hover {
+            transform: translateY(-8px);
+            border-color: #c9a582;
+            box-shadow: 0 12px 35px rgba(90, 74, 66, 0.15);
+        }
 
-        .contact-form { max-width: 600px; margin: 0 auto; }
-        .form-group { margin-bottom: 1.5rem; }
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tradition-section {
+            background: linear-gradient(135deg, #fff9f5 0%, #ffeee5 100%);
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            background: white;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-placeholder {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.1rem;
+            color: #8b735f;
+            font-weight: 500;
+        }
+
+        .tradition-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .tradition-text h3 {
+            color: #8b735f;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .tradition-text h3:first-child {
+            margin-top: 0;
+        }
+
+        .tradition-text p {
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .tradition-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .tradition-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(90, 74, 66, 0.1);
+            transition: all 0.3s;
+            border: 2px solid #f5e6d3;
+        }
+
+        .tradition-card:hover {
+            transform: translateY(-8px);
+            border-color: #c9a582;
+            box-shadow: 0 12px 35px rgba(90, 74, 66, 0.15);
+        }
+
+        .tradition-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tradition-card h4 {
+            color: #8b735f;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .tradition-card p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #5a4a42 0%, #3d3430 100%);
+            color: #f5e6d3;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer p:first-child {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -266,41 +456,96 @@
             transition: all 0.3s;
             background: white;
         }
+
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #c9a582;
             box-shadow: 0 0 0 3px rgba(201, 165, 130, 0.1);
         }
-        .form-group textarea { resize: vertical; min-height: 120px; }
 
-        /* WhatsApp */
-        .whatsapp-section { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); padding: 3.5rem; border-radius: 25px; text-align: center; margin-top: 3.5rem; color: white; box-shadow: 0 12px 40px rgba(37, 211, 102, 0.35); }
-        .whatsapp-section h3 { font-size: 2rem; margin-bottom: 1rem; }
-        .whatsapp-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
-        .whatsapp-button { background: white; color: #25D366; padding: 1.3rem 3.5rem; border: 3px solid transparent; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
-        .whatsapp-button:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); background: #f0f0f0; color: #128C7E; }
-        .whatsapp-icon { font-size: 1.8rem; }
-
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
-            .nav-links { display: none; }
-            .logo { font-size: 1.2rem; }
-            .logo-image { width: 40px; height: 40px; }
-            .tradition-content { grid-template-columns: 1fr; }
-            .tradition-images { grid-template-columns: 1fr; }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
-        /* Pour compenser header fixe */
-        section { scroll-margin-top: 100px; }
+        .whatsapp-section {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            padding: 3.5rem;
+            border-radius: 25px;
+            text-align: center;
+            margin-top: 3.5rem;
+            color: white;
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.35);
+        }
+
+        .whatsapp-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .whatsapp-button {
+            background: white;
+            color: #25D366;
+            padding: 1.3rem 3.5rem;
+            border: 3px solid transparent;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            background: #f0f0f0;
+        }
+
+        .whatsapp-icon {
+            font-size: 1.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo-image {
+                width: 40px;
+                height: 40px;
+            }
+
+            .tradition-content {
+                grid-template-columns: 1fr;
+            }
+
+            .tradition-images {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Logo centré en haut -->
-    <div style="text-align:center; margin:20px 0;">
-        <img src="logop.png" width="180" alt="Logo BLÖM">
-    </div>
-
     <header>
         <nav>
             <div class="logo">
@@ -319,7 +564,6 @@
         </nav>
     </header>
 
-    <!-- Hero -->
     <section class="hero" id="accueil">
         <div class="hero-content">
             <h1>BLÖM - Eau de Rose</h1>
@@ -328,7 +572,6 @@
         </div>
     </section>
 
-    <!-- Produits -->
     <section class="section" id="produits">
         <h2 class="section-title">Nos Produits</h2>
         <div class="products">
@@ -336,89 +579,180 @@
                 <div class="product-image">🌹</div>
                 <div class="product-info">
                     <h3>Eau de Rose Pure</h3>
-                    <p>Extrait naturel pour soins et parfums.</p>
-                    <div class="price">12€</div>
-                    <button class="buy-button">Ajouter au panier</button>
+                    <p>Distillation traditionnelle de roses fraîches de Constantine. 100% naturelle.</p>
+                    <div class="price">24,99 €</div>
+                    <button class="buy-button" onclick="addToCart('Pure')">Ajouter au panier</button>
                 </div>
             </div>
+
             <div class="product-card">
-                <div class="product-image">💧</div>
+                <div class="product-image">✨</div>
                 <div class="product-info">
-                    <h3>Eau de Rose Bio</h3>
-                    <p>100% bio et naturel pour la peau.</p>
-                    <div class="price">15€</div>
-                    <button class="buy-button">Ajouter au panier</button>
+                    <h3>Eau de Rose Premium</h3>
+                    <p>Collection exclusive de roses de Damas. Édition limitée artisanale.</p>
+                    <div class="price">39,99 €</div>
+                    <button class="buy-button" onclick="addToCart('Premium')">Ajouter au panier</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">💎</div>
+                <div class="product-info">
+                    <h3>Pack Découverte</h3>
+                    <p>Trois flacons de 100ml pour découvrir nos différentes collections de roses.</p>
+                    <div class="price">59,99 €</div>
+                    <button class="buy-button" onclick="addToCart('Pack')">Ajouter au panier</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tradition et Galerie -->
     <section class="section tradition-section" id="tradition">
-        <h2 class="section-title">Notre Tradition</h2>
+        <h2 class="section-title">Tradition Algérienne de Distillation</h2>
+        
         <div class="photo-gallery">
-            <div class="gallery-item"><img src="rose1.jpg" alt="Rose"></div>
-            <div class="gallery-item"><img src="rose2.jpg" alt="Rose"></div>
-            <div class="gallery-item"><img src="rose3.jpg" alt="Rose"></div>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/aromeconstantinois-droid/a-l-eau-de-rose/5c0fc780d07b154ea4944389de32968de9335b8b/image%201.jpg" alt="Alambic traditionnel" onerror="this.nextElementSibling.style.display='block'">
+                <div class="gallery-placeholder" style="display:none">🏺 Alambic traditionnel en cuivre</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/aromeconstantinois-droid/a-l-eau-de-rose/5c0fc780d07b154ea4944389de32968de9335b8b/image%202.jpg" alt="Flacons d'eau de rose" onerror="this.nextElementSibling.style.display='block'">
+                <div class="gallery-placeholder" style="display:none">🌸 Flacons artisanaux d'eau de rose</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/aromeconstantinois-droid/a-l-eau-de-rose/5c0fc780d07b154ea4944389de32968de9335b8b/image%203.jpg" alt="Pétales de roses" onerror="this.nextElementSibling.style.display='block'">
+                <div class="gallery-placeholder" style="display:none">🌹 Récolte des pétales de roses</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/aromeconstantinois-droid/a-l-eau-de-rose/5c0fc780d07b154ea4944389de32968de9335b8b/image%204.jpg" alt="Artisane" onerror="this.nextElementSibling.style.display='block'">
+                <div class="gallery-placeholder" style="display:none">👩 Artisanes perpétuant la tradition</div>
+            </div>
         </div>
+        
         <div class="tradition-content">
             <div class="tradition-text">
-                <h3>Notre Histoire</h3>
-                <p>Depuis des générations, nous cultivons et transformons les roses en eau pure...</p>
+                <h3>🇩🇿 Un Héritage Millénaire</h3>
+                <p>La distillation de l'eau de rose, ou "Ma Zhar" en arabe algérien, fait partie intégrante du patrimoine culturel algérien depuis des siècles. À Constantine et dans plusieurs régions d'Algérie, cet art ancestral se manifeste à travers la célèbre fête traditionnelle de la distillation de l'eau de rose et de fleur d'oranger, perpétuant un savoir-faire transmis de génération en génération.</p>
+                
+                <h3>🌸 La Cueillette Traditionnelle</h3>
+                <p>Selon la tradition algérienne, les roses doivent être cueillies à l'aube, avant le lever du soleil, lorsque leur parfum est le plus intense. Les femmes algériennes perpétuent cette pratique rituelle, récoltant délicatement chaque pétale de rose pour préserver sa pureté et ses bienfaits thérapeutiques exceptionnels.</p>
+                
+                <h3>⚗️ Le Savoir-Faire Ancestral</h3>
+                <p>La méthode de distillation traditionnelle algérienne, appelée "Taqtir", utilise des alambics en cuivre artisanaux transmis de génération en génération. Ce processus lent et méticuleux permet d'extraire l'essence pure de la rose tout en conservant ses propriétés thérapeutiques et son parfum envoûtant, emblématique de la tradition de Constantine.</p>
+                
+                <h3>💫 Dans la Culture Algérienne</h3>
+                <p>L'eau de rose occupe une place centrale dans les cérémonies traditionnelles algériennes, particulièrement lors des mariages et des fêtes religieuses. Elle symbolise la pureté, la beauté et l'hospitalité. Les familles algériennes l'utilisent également pour parfumer le thé à la menthe, préparer les pâtisseries traditionnelles comme les zlabias et les makrouts, et dans les soins de beauté ancestraux.</p>
+                
+                <h3>🌿 Notre Engagement</h3>
+                <p>Nous honorons cette riche tradition en travaillant directement avec des artisanes algériennes qui perpétuent ces méthodes ancestrales. Chaque flacon d'eau de rose est le fruit d'un savoir-faire authentique, préservant la richesse de notre patrimoine culturel et la qualité exceptionnelle des roses algériennes.</p>
             </div>
+            
             <div class="tradition-images">
                 <div class="tradition-card">
-                    <div class="tradition-icon">🌹</div>
-                    <h4>Qualité</h4>
-                    <p>Nos roses sont soigneusement sélectionnées pour leur pureté.</p>
+                    <div class="tradition-icon">🏺</div>
+                    <h4>Alambics Traditionnels</h4>
+                    <p>Cuivre artisanal pour la distillation de roses</p>
                 </div>
                 <div class="tradition-card">
-                    <div class="tradition-icon">💧</div>
-                    <h4>Authenticité</h4>
-                    <p>Un savoir-faire transmis depuis plus de 50 ans.</p>
+                    <div class="tradition-icon">🌅</div>
+                    <h4>Cueillette à l'Aube</h4>
+                    <p>Récolte matinale des roses de Constantine</p>
+                </div>
+                <div class="tradition-card">
+                    <div class="tradition-icon">🌹</div>
+                    <h4>Fête de la Distillation</h4>
+                    <p>Célébration ancestrale de l'eau de rose</p>
+                </div>
+                <div class="tradition-card">
+                    <div class="tradition-icon">🎊</div>
+                    <h4>Cérémonies & Fêtes</h4>
+                    <p>Au cœur des traditions algériennes</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bienfaits -->
     <section class="section benefits" id="bienfaits">
-        <h2 class="section-title">Bienfaits</h2>
+        <h2 class="section-title">Bienfaits de l'Eau de Rose</h2>
         <div class="benefits-grid">
             <div class="benefit-item">
-                <div class="benefit-icon">✨</div>
-                <h4>Hydratation</h4>
-                <p>Protège et hydrate votre peau naturellement.</p>
+                <div class="benefit-icon">🧘</div>
+                <h3>Relaxation</h3>
+                <p>Apaise l'esprit et réduit le stress naturellement</p>
             </div>
             <div class="benefit-item">
-                <div class="benefit-icon">💖</div>
-                <h4>Éclat</h4>
-                <p>Redonne éclat et douceur à votre visage.</p>
+                <div class="benefit-icon">✨</div>
+                <h3>Peau Éclatante</h3>
+                <p>Hydrate et revitalise votre peau en profondeur</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🌿</div>
+                <h3>100% Naturel</h3>
+                <p>Sans additifs ni conservateurs chimiques</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">💚</div>
+                <h3>Éco-responsable</h3>
+                <p>Production durable et emballage recyclable</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
     <section class="section" id="contact">
         <h2 class="section-title">Contactez-nous</h2>
-        <div class="contact-form">
-            <div class="form-group">
-                <input type="text" placeholder="Nom" required>
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <textarea placeholder="Message" required></textarea>
-            </div>
-            <button class="cta-button">Envoyer</button>
+        
+        <div class="whatsapp-section">
+            <h3>💬 Discutez avec nous sur WhatsApp</h3>
+            <p>Pour une réponse rapide, contactez-nous directement via WhatsApp !</p>
+            <a href="https://wa.me/213XXXXXXXXX?text=Bonjour%2C%20je%20suis%20intéressé%20par%20vos%20produits%20d'eau%20de%20rose" 
+               class="whatsapp-button" 
+               target="_blank">
+                <span class="whatsapp-icon">📱</span>
+                Contacter sur WhatsApp
+            </a>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem;">Disponible 7j/7 pour répondre à vos questions</p>
         </div>
+
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <input type="text" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Votre message" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Envoyer</button>
+        </form>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 BLÖM - Tous droits réservés</p>
-        <p>Algérie</p>
+        <p>&copy; 2025 BLÖM - Eau de Rose. Tous droits réservés.</p>
+        <p>L'essence authentique de la rose algérienne pour votre bien-être quotidien</p>
     </footer>
+
+    <script>
+        function addToCart(product) {
+            alert('Le produit "' + product + '" a été ajouté à votre panier !');
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+            e.target.reset();
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
