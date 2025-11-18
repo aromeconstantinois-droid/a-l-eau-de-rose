@@ -31,15 +31,11 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(90, 74, 66, 0.08);
             backdrop-filter: blur(10px);
-                <header>
-    <nav>
+              <header>
+    <nav class="navbar">
         <div class="logo">
-            <div class="logo-image">
-                <img src="logoP.png" alt="BLÖM Logo">
-            </div>
-            <!-- texte BLÖM retiré -->
+            <img src="logoP.png" alt="BLÖM Logo">
         </div>
-
         <ul class="nav-links">
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#produits">Produits</a></li>
@@ -51,10 +47,50 @@
 </header>
 
 <style>
-    /* cacher le span si jamais il existe */
-    .logo span {
+/* Navbar centrée */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo img {
+    width: 150px; /* agrandir le logo */
+    height: auto;
+}
+
+/* Menu */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #667eea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
         display: none;
     }
+    .logo img {
+        width: 120px;
+    }
+}
+</style>
 
     /* agrandir le logo au maximum */
     .logo-image img {
